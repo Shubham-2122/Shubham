@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 function AHeader() {
 
@@ -9,6 +10,7 @@ function AHeader() {
     const logout = ()=>{
         localStorage.removeItem("userid");
         localStorage.removeItem("uname");
+        toast.success("Logout successfully")
         console.log("Logout successfully")
         redirect("/Dashboard")
     }

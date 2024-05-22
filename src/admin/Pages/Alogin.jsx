@@ -4,6 +4,7 @@ import AHeader from '../Comon_cpomnent/AHeader';
 import AFooter from '../Comon_cpomnent/AFooter';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function Alogin() {
     const redirect = useNavigate();
@@ -23,6 +24,7 @@ function Alogin() {
         const {email,password} = fromvalue;
 
         if(!email.trim() || !password.trim()){
+            toast.error("email and password are required")
             console.error('email and password are required');
             return;
         }
@@ -32,6 +34,7 @@ function Alogin() {
             const res = await axios.get(`http://localhost:3000/admin?email=${email}`)
             if(res.data.length === 0)
                 {
+                    toast.error("Email does not Exits")
                     console.error("Email does not Exits");
                     return
                 }
@@ -39,6 +42,7 @@ function Alogin() {
                 const user = res.data[0];
                 if(user.password !== password)
                     {
+                        toast.error("incorrect Password")
                         console.error("incorrect Password")
                         return
                     }
@@ -46,6 +50,7 @@ function Alogin() {
                 // session created 
                 localStorage.setItem('userid',user.id);
                 localStorage.setItem('uname',user.name);
+                toast.success("login succssfull")
                 console.log("login succssfull")
                 setfromvalue({
                     email:"",

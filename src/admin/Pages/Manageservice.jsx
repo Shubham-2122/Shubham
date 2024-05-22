@@ -10,14 +10,7 @@ function Manageservice() {
 
     const [data1, setdata1] = useState()
 
-    // Edit option
-    const [editingService, setEditingService] = useState(null);
-    const [editedService, setEditedService] = useState({
-        id: '',
-        service_name: '',
-        desc: '',
-        ser_img:''
-    });
+
 
     const fetch = async () => {
         const res = await axios.get(`http://localhost:3000/service`)
@@ -30,7 +23,14 @@ function Manageservice() {
         const res = await axios.delete(`http://localhost:3000/service/${id}`)
         fetch()
     }
-
+    // Edit option
+    const [editingService, setEditingService] = useState(null);
+    const [editedService, setEditedService] = useState({
+        id: '',
+        service_name: '',
+        desc: '',
+        ser_img: ''
+    });
 
     // edit update
     const editService = (service) => {
@@ -98,8 +98,8 @@ function Manageservice() {
                                                 onChange={(e) => setEditedService({ ...editedService, service_name: e.target.value })} className="form-control border-0" placeholder="update service" style={{ height: 55 }} />
                                         </div>
                                         <div className="col-12 col-sm-6">
-                                            
-                                            <input value={editedService.ser_img} onChange={(e)=> setEditedService({...editedService,ser_img:e.target.value})} type="url" className="form-control border-0" placeholder="update image" style={{ height: 55 }} />
+
+                                            <input value={editedService.ser_img} onChange={(e) => setEditedService({ ...editedService, ser_img: e.target.value })} type="url" className="form-control border-0" placeholder="update image" style={{ height: 55 }} />
                                         </div>
 
                                         <div className="col-12">
