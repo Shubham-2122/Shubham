@@ -1,0 +1,44 @@
+{
+  "service": [
+    {
+      "id": "1",
+      "service_name": "furnicher",
+      "desc": "funchier sadk sadjk sadj hjh ugu kgku ",
+      "ser_img": "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg",
+      "status": "unblock"
+    },
+    {
+      "id": "2",
+      "service_name": "furnicher2",
+      "desc": "funchier srf vfds vsdf s fs",
+      "ser_img": "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg",
+      "status": "unblock"
+    },
+    {
+      "id": "1715939001499",
+      "service_name": "new data",
+      "desc": "sadsadf asf asf saf asf rasf saf as",
+      "ser_img": "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
+    },
+    {
+      "id": "1715946686039",
+      "service_name": "new data 2",
+      "desc": "sad sdf sdf sdf sd f sdfdsfj sa fjb",
+      "ser_img": "https://media.istockphoto.com/id/1093917492/photo/joinery-team-fitting-a-kitchen.jpg?s=612x612&w=0&k=20&c=IQcKUbT8klj_Qy482Wj2xBfKvw5aS00EQ8ziKdNBABI="
+    },
+    {
+      "id": "1716204289669",
+      "service_name": "data 3",
+      "desc": "sahgj jg yjf j fvy f fuj",
+      "ser_img": "https://apollo.olx.in/v1/files/uxuwam8bcisq3-IN/image;s=360x0"
+    }
+  ],
+  "admin": [
+    {
+      "id": "1",
+      "name":"admin",
+      "email": "admin@gmail.com",
+      "password": "1234"
+    }
+  ]
+}
