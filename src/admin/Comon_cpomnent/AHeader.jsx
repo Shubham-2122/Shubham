@@ -54,7 +54,7 @@ function AHeader() {
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto p-4 p-lg-0">
                         <NavLink to="/Dashboard" className="nav-item nav-link ">Home</NavLink>
-                        <NavLink to="/about" className="nav-item nav-link">About</NavLink>
+                        <NavLink to="/User" className="nav-item nav-link">User</NavLink>
                         
                         <div className="nav-item dropdown">
                             <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>

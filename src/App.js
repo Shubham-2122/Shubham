@@ -10,6 +10,10 @@ import Adashboard from "./admin/Pages/Adashboard";
 import AddService from "./admin/Pages/AddService";
 import Manageservice from "./admin/Pages/Manageservice";
 import Alogin from "./admin/Pages/Alogin";
+import AMangeuser from "./admin/Pages/AMangeuser";
+import Ulogin from "./wesite/Pages/Ulogin";
+import Uregister from "./wesite/Pages/Uregister";
+import Uprofile from "./wesite/Pages/Uprofile";
 
 
 
@@ -25,6 +29,9 @@ function App() {
           <Route path="/contact" element={<><Contact/></>} />
           <Route path="/service" element={<><Service/></>} />  
           <Route path="/project" element={<><Project /></>} />
+          <Route path="/Ulogin" element={<><Ulogin /></>} />
+          <Route path="/Uregister" element={<><Uregister /></>} />
+          <Route path="/profile" element={<><Uprofile /></>} />
           <Route path="*" element={<><Pno1/></>} /> 
 
 
@@ -34,6 +41,7 @@ function App() {
           <Route path="/addservice" element={<><AddService/></>} />
           <Route path="/manageservice" element={<><Manageservice/></>} />
           <Route path="/alogin" element={<><Alogin/></>} />
+          <Route path="/User" element={<><AMangeuser/></>} />
           
         </Routes> 
       </BrowserRouter>
