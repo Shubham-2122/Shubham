@@ -36,9 +36,47 @@
   "admin": [
     {
       "id": "1",
-      "name":"admin",
+      "name": "admin",
       "email": "admin@gmail.com",
       "password": "1234"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "name": "User1",
+      "email": "user@gmail.com",
+      "passowrd": "1234",
+      "mobile": "98236725236",
+      "image": "https://th.bing.com/th/id/OIP.qNJ-3o_aLdtFRswCO9VLOgHaEK?w=290&h=180&c=7&r=0&o=5&cb=11&dpr=1.3&pid=1.7",
+      "status": "unblock"
+    },
+    {
+      "id": "2",
+      "name": "User2",
+      "email": "user2@gmail.com",
+      "passowrd": "2345",
+      "mobile": "2654654536",
+      "image": "https://th.bing.com/th/id/OIP.qNJ-3o_aLdtFRswCO9VLOgHaEK?w=290&h=180&c=7&r=0&o=5&cb=11&dpr=1.3&pid=1.7",
+      "status": "unblock"
+    },
+    {
+      "id": "1716536340719",
+      "name": "shubham",
+      "email": "jadavshubham5@gmail.com",
+      "passowrd": "12345",
+      "mobile": "987543653462",
+      "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA1gMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAFAAIDBAYBB//EAEQQAAIBAwMBBQUGAgcGBwEAAAECAwAEEQUSITEGE0FRYSJxgZGhFCMyQrHRUvAVFjNiweHxB1OChZLjQ1WTlKKj0jT/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/xAAhEQEBAAICAgMBAQEAAAAAAAAAAQIRAxIhQQQTMRRhUf/aAAwDAQACEQMRAD8AgvLtIn3yxEqB7S8gI3mceNFOzeqGK6hmeRZEjBCqwJycVnZ53JMcgLc5ds5zUKuImCLuXb7RB4r50zsu27Jp7pbXlvPCr96rsFBbn08qmhuEkLKo4GfpXi1hrF1FGyR3TjLeyik49c+dErPX7xWj2ynKhxvxn8X+ler+nH2x0r1uOZJFDJyD0NPDeHiK8os+111DEYe83JwAScYbPJNH9E7Ybi39IFQST7QHFbnPhTrW5DDnjpXeD0rHXHbGzkI7veqM45YAcD40ZsddtrpkRGILHA3Cukzxt1KaGMUsUlII4p1aQ2kzhRycU6uMoYc0Am8VJbjJGGI9kqeciu904ADukpHiRhiPEGnXEaLKNhYFfMZ2+tQCP2gsh9luSVbBB86qIbaPfbtA0ntW8geNx4qDx/iKsxPG1u4cqqklgV4Gc1Ru4vsqtdW4ZtmAxDZ2Afmx8efSpILa2uNJRo3JjfO7JJxk9etBNdgfdMrqAVaBgTnORxVYAJfbSyCJI1ZlK8+3wAP+k1KZdiRJdMQVLJz0J",
+      "status": "unblock"
+    },
+    {
+      "id": "1716536575553",
+      "name": "sujal",
+      "email": "sujal@gmail.com",
+      "passowrd": "2345",
+      "mobile": "987543653462",
+      "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA1gMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAFAAIDBAYBB//EAEQQAAIBAwMBBQUGAgcGBwEAAAECAwAEEQUSITEGE0FRYSJxgZGhFCMyQrHRUvAVFjNiweHxB1OChZLjQ1WTlKKj0jT/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/xAAhEQEBAAICAgMBAQEAAAAAAAAAAQIRAxIhQQQTMRRhUf/aAAwDAQACEQMRAD8AgvLtIn3yxEqB7S8gI3mceNFOzeqGK6hmeRZEjBCqwJycVnZ53JMcgLc5ds5zUKuImCLuXb7RB4r50zsu27Jp7pbXlvPCr96rsFBbn08qmhuEkLKo4GfpXi1hrF1FGyR3TjLeyik49c+dErPX7xWj2ynKhxvxn8X+ler+nH2x0r1uOZJFDJyD0NPDeHiK8os+111DEYe83JwAScYbPJNH9E7Ybi39IFQST7QHFbnPhTrW5DDnjpXeD0rHXHbGzkI7veqM45YAcD40ZsddtrpkRGILHA3Cukzxt1KaGMUsUlII4p1aQ2kzhRycU6uMoYc0Am8VJbjJGGI9kqeciu904ADukpHiRhiPEGnXEaLKNhYFfMZ2+tQCP2gsh9luSVbBB86qIbaPfbtA0ntW8geNx4qDx/iKsxPG1u4cqqklgV4Gc1Ru4vsqtdW4ZtmAxDZ2Afmx8efSpILa2uNJRo3JjfO7JJxk9etBNdgfdMrqAVaBgTnORxVYAJfbSyCJI1ZlK8+3wAP+k1KZdiRJdMQVLJz0J",
+      "status": "block"
     }
   ]
 }
