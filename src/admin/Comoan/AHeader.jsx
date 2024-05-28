@@ -1,7 +1,18 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
-function Header() {
+function AHeader() {
+
+    const redirect = useNavigate()
+
+    const logout=()=>{
+        localStorage.removeItem('aloginid')
+        localStorage.removeItem('aname')
+        console.log("logout success")
+        toast.success("logout success")
+        redirect("/Dashboard")
+    }
     return (
         <div>
             <div>
@@ -41,9 +52,16 @@ function Header() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto p-4 p-lg-0">
-                        <NavLink to="/" className="nav-item nav-link ">Home</NavLink>
+                        <NavLink to="/Dashboard" className="nav-item nav-link ">Home</NavLink>
                         <NavLink to="/about" className="nav-item nav-link">About</NavLink>
-                        <NavLink to="/service" className="nav-item nav-link">Service</NavLink>
+                        {/* <NavLink to="/service" className="nav-item nav-link">Service</NavLink> */}
+                        <div className="nav-item dropdown">
+                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+                            <div className="dropdown-menu fade-up m-0">
+                                <Link to="/addservice" className="dropdown-item">addservice</Link>
+                                <Link to="/Mangesev" className="dropdown-item">Manage service</Link>
+                            </div>
+                        </div>
                         <NavLink to="/project" className="nav-item nav-link">Project</NavLink>
                         <div className="nav-item dropdown">
                             <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -56,8 +74,39 @@ function Header() {
                             </div>
                         </div>
                         <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
+                        {(
+                            ()=>{
+                                if(localStorage.getItem("aloginid"))
+                                    {
+                                        return(
+                                            <>
+                                                <Link className='nav-item nav-link'>hiii...{localStorage.getItem('aname')}</Link>
+                                            </>
+                                        )
+                                    }
+                            }
+                        )()}
+                        {(
+                            ()=>{
+                                if(localStorage.getItem("aloginid"))
+                                    {
+                                        return(
+                                            <>
+                                                <Link className="nav-item nav-link" onClick={logout}>logout</Link>
+                                            </>
+                                        )
+                                    }
+                                else{
+                                    return(
+                                        <>
+                                            <NavLink className="nav-item nav-link" to="/Alogin">Login</NavLink>
+                                        </>
+                                    )
+                                }
+                            }
+                        )()}
                     </div>
-                    <a href className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i className="fa fa-arrow-right ms-3" /></a>
+                   
                 </div>
             </nav>
 
@@ -65,4 +114,4 @@ function Header() {
     )
 }
 
-export default Header
+export default AHeader

@@ -1,73 +1,77 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import { MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
-import AHeader from '../Comon_cpomnent/AHeader';
-import AFooter from '../Comon_cpomnent/AFooter';
+import AHeader from '../Comoan/AHeader';
+import AFooter from '../Comoan/AFooter';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 function Alogin() {
-    const redirect = useNavigate();
-    const [fromvalue, setfromvalue] = useState({
-        email: "",
-        password: "",
+    const redirect = useNavigate()
+
+    const [fromvalue,setfromvalue]= useState({
+        email:"",
+        password:"",
     })
 
-    const getFrom = (e) => {
-        setfromvalue({ ...fromvalue, [e.target.name]: e.target.value });
+    const getchnage=(e)=>{
+
+        setfromvalue({...fromvalue,[e.target.name]:e.target.value})
         console.log(fromvalue)
     }
 
-    const submithandle = async(e)=>{
-        e.preventDefault();
-
-        const {email,password} = fromvalue;
-
-        if(!email.trim() || !password.trim()){
-            toast.error("email and password are required")
-            console.error('email and password are required');
-            return;
+    const submithadle=async(e)=>{
+        e.preventDefault()
+      
+        // destucing
+        const {email,password} = fromvalue
+        if(!email.trim() || !password.trim())
+        {
+            console.error("Email and password pls feild")
+            toast.error("Email and password pls feild")
+            return false
         }
-
-        // match process
+        
+        // match proceess
         try {
+
+            
             const res = await axios.get(`http://localhost:3000/admin?email=${email}`)
+
+            console.log(res.data)
+
             if(res.data.length === 0)
-                {
-                    toast.error("Email does not Exits")
-                    console.error("Email does not Exits");
-                    return
-                }
+            {
+                console.error("Email pls correct mathc")
+                toast.error("Email pls correct match")
+                return false
+            }
 
-                const user = res.data[0];
-                if(user.password !== password)
-                    {
-                        toast.error("incorrect Password")
-                        console.error("incorrect Password")
-                        return
-                    }
+            const user =  res.data[0]
+            if(user.password !== password)
+            {
+                console.error("Password field")
+                toast.error("Password field")
+                return false
+            }
 
-                // session created 
-                localStorage.setItem('userid',user.id);
-                localStorage.setItem('uname',user.name);
-                toast.success("login succssfull")
-                console.log("login succssfull")
-                setfromvalue({
-                    email:"",
-                    password:""
-                })
-                redirect("/Dashboard")
+            // session creted 
+            localStorage.setItem('aloginid',user.id)
+            localStorage.setItem('aname',user.name)
+            console.log("login successfull")
+            toast.success("login succssfully")
+            redirect("/Dashboard")
         } catch (error) {
-            console.error("Error during login:",error)
+            
         }
     }
 
     return (
-        <>
+        <div>
             <AHeader />
             <MDBContainer fluid className="p-3 my-5 h-custom">
 
-                <form onSubmit={submithandle}>
+                <form action="" onSubmit={submithadle}>
                     <MDBRow>
 
                         <MDBCol col='10' md='6'>
@@ -98,8 +102,8 @@ function Alogin() {
                                 <p className="text-center fw-bold mx-3 mb-0">Or</p>
                             </div>
 
-                            <MDBInput name='email' value={fromvalue.email} onChange={getFrom} wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg" />
-                            <MDBInput name='password' value={fromvalue.password} onChange={getFrom} wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg" />
+                            <MDBInput wrapperClass='mb-4' name='email' value={fromvalue.email} onChange={getchnage} label='Email address' id='formControlLg' type='email' size="lg" />
+                            <MDBInput wrapperClass='mb-4' name='password' value={fromvalue.password} onChange={getchnage} label='Password' id='formControlLg' type='password' size="lg" />
 
                             <div className="d-flex justify-content-between mb-4">
                                 <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
@@ -107,18 +111,20 @@ function Alogin() {
                             </div>
 
                             <div className='text-center text-md-start mt-4 pt-2'>
-                                <MDBBtn as={<Link/>} className="mb-0 px-5" size='lg'>Login</MDBBtn>
-
+                                <MDBBtn className="mb-0 px-5" size='lg'>Login</MDBBtn>
+                                <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? <a href="#!" className="link-danger">Register</a></p>
                             </div>
+
                         </MDBCol>
 
                     </MDBRow>
                 </form>
 
+
             </MDBContainer>
             <AFooter />
-        </>
-    );
+        </div>
+    )
 }
 
-export default Alogin;
+export default Alogin
