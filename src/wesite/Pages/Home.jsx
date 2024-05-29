@@ -1,13 +1,27 @@
-import React from 'react'
+
 import Header from '../Comon_cpomnent/Header'
 import Footer from '../Comon_cpomnent/Footer'
+import { Helmet } from 'react-helmet'
+
 
 function Home() {
+   
     return (
         <div>
-            
+
             <Header />
-  
+
+            <Helmet>
+              
+                    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+                    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+                    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+                    <link href="css/bootstrap.min.css" rel="stylesheet" />
+              
+
+
+            </Helmet>
+
             {/* <!-- Carousel Start --> */}
             <div className="container-fluid p-0 pb-5">
                 <div className="owl-carousel header-carousel position-relative">

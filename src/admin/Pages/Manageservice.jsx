@@ -38,8 +38,9 @@ function Manageservice() {
         setEditedService(service);
     };
 
-    const saveEditedService = async () => {
+    const saveEditedService = async (e) => {
         try {
+            e.preventDefault()
             await axios.put(`http://localhost:3000/service/${editingService.id}`, editedService);
             fetch(); // Refresh data after editing
             setEditingService(null);
@@ -87,7 +88,7 @@ function Manageservice() {
                     <div className="edit-form">
                         <div className="col-lg-12 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                             <div className="p-lg-5 pe-lg-0">
-                                <div className="section-title text-start">
+                                   <div className="section-title text-start">
                                     <h1 className="display-5 mb-4">Edit service</h1>
                                 </div>
                                 <p className="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>

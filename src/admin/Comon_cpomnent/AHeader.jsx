@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 
@@ -8,12 +8,22 @@ function AHeader() {
 
     // Delete Session 
     const logout = ()=>{
-        localStorage.removeItem("userid");
-        localStorage.removeItem("uname");
+        localStorage.removeItem("adminid");
+        localStorage.removeItem("aname");
         toast.success("Logout successfully")
         console.log("Logout successfully")
-        redirect("/Dashboard")
+        redirect('/alogin')
+        return false
     }
+
+    useEffect(()=>{
+        const res = localStorage.getItem("adminid")
+        console.log(res)
+        if(res == null)
+            {
+                redirect('/alogin')
+            }
+    })
     return (
         <div>
             <div>
@@ -80,10 +90,10 @@ function AHeader() {
                             // use session jova
                             ()=>{
                                 // use session 
-                                if(localStorage.getItem('userid'))
+                                if(localStorage.getItem('adminid'))
                                 {
                                     return(
-                                        <NavLink to="" className="nav-item nav-link" >hi ...{localStorage.getItem('uname')}</NavLink>
+                                        <NavLink to="" className="nav-item nav-link" >hi ...{localStorage.getItem('aname')}</NavLink>
                                     )
                                 }
                             }
@@ -91,7 +101,7 @@ function AHeader() {
                         {/* login yes to logout option chanage data */}
                         {(
                             ()=>{
-                               if(localStorage.getItem("userid"))
+                               if(localStorage.getItem("adminid"))
                                 {
                                     return(
                                         <>

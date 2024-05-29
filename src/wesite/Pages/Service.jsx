@@ -4,19 +4,18 @@ import Footer from '../Comon_cpomnent/Footer'
 import axios from 'axios'
 
 function Service() {
-
     useEffect(()=>{
         fetch()
-    })
+    },[])
 
-    const [data,setdata] = useState()
+    const [data,setdata] =useState()
 
     const fetch=async()=>{
-        const res = await axios.get(`http://localhost:3000/service`)
+
+        const res = await axios.get(`http://localhost:3000/service`);
         console.log(res.data)
         setdata(res.data)
     }
-
     return (
         <div>
             <Header />
@@ -42,25 +41,25 @@ function Service() {
                             <h1 className="display-5 mb-5">Our Services</h1>
                         </div>
                         <div className="row g-4">
-                           {
-                             data && data.map((value,index)=>{
-                                return(
-                                    <div key={index} className="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                                    <div className="service-item">
-                                        <div className="overflow-hidden">
-                                            <img className="img-fluid" src={value.ser_img} alt />
-                                        </div>
-                                        <div className="p-4 text-center border border-5 border-light border-top-0">
-                                            <h4 className="mb-3">{value.service_name}</h4>
-                                            <p>{value.desc}</p>
-                                            <a className="fw-medium" href>Read More<i className="fa fa-arrow-right ms-2" /></a>
-                                        </div>
+                            {
+                                data && data.map((value,index)=>{
+                                    return(
+                                        <div key={index} className="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                                <div className="service-item">
+                                    <div className="overflow-hidden">
+                                        <img className="img-fluid" src={value.ser_img} alt />
+                                    </div>
+                                    <div className="p-4 text-center border border-5 border-light border-top-0">
+                                        <h4 className="mb-3">{value.service_name}</h4>
+                                        <p>{value.desc}</p>
+                                        <a className="fw-medium" href>Read More<i className="fa fa-arrow-right ms-2" /></a>
                                     </div>
                                 </div>
-                                
-                                )
-                             })
-                           }
+                            </div>
+                                    )
+                                })
+                            }
+                            
                         </div>
                     </div>
                 </div>
